@@ -1,0 +1,47 @@
+﻿<UserControl xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"  x:Class="GreenWhale.UpdateCore.SerialPortView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GreenWhale.UpdateCore" Loaded="UserControl_Loaded"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             mc:Ignorable="d"  d:DesignWidth="400">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="/GreenWhale.UpdateCore;component/Dictionary/Resouces.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="端口名" Style="{StaticResource TextBlock}"></TextBlock>
+        <dxe:ComboBoxEdit x:Name="cmbname" IsTextEditable="False" Grid.Column="1" Style="{StaticResource ComboBoxEdit}" AutoComplete="True"></dxe:ComboBoxEdit>
+        <TextBlock Text="波特率" Grid.Row="1" Style="{StaticResource TextBlock}"></TextBlock>
+        <dxe:ComboBoxEdit x:Name="cmbbaudrate" IsTextEditable="False" Grid.Column="1" Grid.Row="1" Style="{StaticResource ComboBoxEdit}">
+            <dxe:ComboBoxEditItem Content="1200"/>
+            <dxe:ComboBoxEditItem Content="2400"/>
+            <dxe:ComboBoxEditItem Content="4800"/>
+            <dxe:ComboBoxEditItem Content="9600"/>
+            <dxe:ComboBoxEditItem Content="115200"/>
+        </dxe:ComboBoxEdit>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <dx:SimpleButton Content="开启" Style="{StaticResource barSimpleButon}" Click="SimpleButton_Click"></dx:SimpleButton>
+            <dx:SimpleButton Grid.Column="1" Click="SimpleButton_Click_1" Content="关闭" Style="{StaticResource barSimpleButon}"></dx:SimpleButton>
+        </Grid>
+        <TextBlock FontWeight="Bold" Style="{StaticResource TextBlock}" x:Name="spstate" Grid.Row="3" Grid.ColumnSpan="2"></TextBlock>
+    </Grid>
+</UserControl>

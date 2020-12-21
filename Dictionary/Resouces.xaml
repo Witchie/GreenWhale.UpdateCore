@@ -1,0 +1,118 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"           
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+                    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:model="clr-namespace:GreenWhale.UpdateCore.Model">
+    <Style TargetType="TextBlock" x:Key="TextBlock">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="Button" x:Key="ButtonFont">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="FontFamily" Value="/GreenWhale.ShellLuncher;component/Font/#FontAwesome"></Setter>
+    </Style>
+    <Style TargetType="dxe:ListBoxEdit" x:Key="ListBoxEdit">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="Button" x:Key="Button">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="TreeView" x:Key="TreeView">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="ProgressBar" x:Key="ProgressBar">
+        <Setter Property="Margin" Value="3"></Setter>
+        <Setter Property="Height" Value="25"></Setter>
+    </Style>
+    <Style TargetType="dxe:CheckEdit" x:Key="CheckEdit">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="CheckBox" x:Key="CheckBox">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="GroupBox" x:Key="GroupBox">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="dxe:ImageEdit" x:Key="ImageEdit">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="dxe:TextEdit" x:Key="TextEdit">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="dxe:DateEdit" x:Key="DateEdit">
+        <Setter Property="Margin" Value="5,6,5,6"></Setter>
+        <Setter Property="Padding" Value="3"></Setter>
+        <Setter Property="Mask" Value="G"></Setter>
+        <Setter Property="MaskUseAsDisplayFormat" Value="True"></Setter>
+    </Style>
+    <Style TargetType="ComboBox" x:Key="ComboBox">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="TextBox" x:Key="TextBox">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="PasswordBox" x:Key="PasswordBox">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+    </Style>
+    <Style TargetType="TextBox" x:Key="TextBoxArea">
+        <Setter Property="Margin" Value="5"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Disabled"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Top"></Setter>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"></Setter>
+    </Style>
+    <Style TargetType="dx:SimpleButton" x:Key="barSimpleButon">
+        <Setter Property="Margin" Value="3"></Setter>
+        <Setter Property="Height" Value="25"></Setter>
+    </Style>
+    <Style TargetType="dxe:ComboBoxEdit" x:Key="ComboBoxEdit">
+        <Setter Property="Margin" Value="3"></Setter>
+        <Setter Property="Height" Value="25"></Setter>
+    </Style>
+    <DataTemplate x:Key="rowIndicatorContentTemplate">
+        <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+            <TextBlock Foreground="Red"
+                           TextAlignment="Center">
+                <TextBlock.Text>
+                    <Binding Path="RowHandle.Value">
+                        <Binding.Converter>
+                            <model:RowConvert></model:RowConvert>
+                        </Binding.Converter>
+                    </Binding>
+                </TextBlock.Text>
+            </TextBlock>
+        </StackPanel>
+    </DataTemplate>
+    <Style TargetType="dxg:GridControl">
+        <Setter Property="AutoGenerateColumns" Value="None"></Setter>
+        <Setter Property="EnableSmartColumnsGeneration" Value="True"></Setter>
+        <Setter Property="SelectionMode" Value="Row"></Setter>
+    </Style>
+    <Style TargetType="dxg:TableView" >
+        <Setter Property="ShowGroupPanel" Value="False"></Setter>
+        <Setter Property="RowIndicatorContentTemplate" Value="{StaticResource rowIndicatorContentTemplate}"></Setter>
+        <Setter Property="AllowEditing" Value="False"></Setter>
+        <Setter Property="IndicatorWidth" Value="40"></Setter>
+        <Setter Property="ShowSearchPanelMode" Value="Always"></Setter>
+        <Setter Property="ShowSearchPanelFindButton" Value="True"></Setter>
+    </Style>
+    <Style TargetType="dxg:GridColumn">
+        <Setter Property="HorizontalHeaderContentAlignment" Value="Center"></Setter>
+    </Style>
+</ResourceDictionary>
