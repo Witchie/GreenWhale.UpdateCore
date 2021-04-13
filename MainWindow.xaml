@@ -1,11 +1,10 @@
-﻿<dx:ThemedWindow xmlns:UpdateCore="clr-namespace:GreenWhale.UpdateCore"   xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
-                  x:Class="WorkerUse.MainWindow"
+﻿<Window xmlns:UpdateCore="clr-namespace:GreenWhale.UpdateCore"
+        x:Class="WorkerUse.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WorkerUse"
-        mc:Ignorable="d" EnableAcrylic="True" AcrylicOpacity="0.6"
+        mc:Ignorable="d" 
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TabControl>
@@ -22,4 +21,4 @@
 
         </TabControl>
     </Grid>
-</dx:ThemedWindow>
+</Window>

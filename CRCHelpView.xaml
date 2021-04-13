@@ -22,13 +22,13 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <GroupBox Header="待校验数据" Style="{StaticResource GroupBox}">
-            <dxe:TextEdit x:Name="source" TextWrapping="Wrap" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Style="{StaticResource TextEdit}"  MaskPlaceHolder="0" Mask="([0-9A-Fa-f][0-9A-Fa-f])+" MaskType="RegEx" MaskUseAsDisplayFormat="True" />
+            <TextBox x:Name="source"  Style="{StaticResource TextBox}"  />
         </GroupBox>
         <GroupBox Grid.Row="1" Header="多项式"  Style="{StaticResource GroupBox}">
-            <dxe:TextEdit x:Name="pole" Style="{StaticResource TextEdit}" MaskPlaceHolder="0" Mask="[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f]" MaskType="RegEx" MaskUseAsDisplayFormat="True" />
+            <TextBox x:Name="pole" Style="{StaticResource TextBox}" />
         </GroupBox>
         <GroupBox Grid.Row="2" Header="初始值"  Style="{StaticResource GroupBox}">
-            <dxe:TextEdit x:Name="ini" Style="{StaticResource TextEdit}" MaskPlaceHolder="0" Mask="[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f]" MaskType="RegEx" MaskUseAsDisplayFormat="True" />
+            <TextBox x:Name="ini" Style="{StaticResource TextBox}" />
         </GroupBox>
         <GroupBox Grid.Row="3" Header="校验结果"  Style="{StaticResource GroupBox}">
             <Grid>
@@ -36,7 +36,7 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <dxe:TextEdit x:Name="result" Style="{StaticResource TextEdit}" MaskPlaceHolder="0" Mask="[0-9A-Fa-f]+" MaskType="RegEx" MaskUseAsDisplayFormat="True" />
+                <TextBox x:Name="result" Style="{StaticResource TextBox}" />
                 <Button Style="{StaticResource Button}" Grid.Column="1" Content="校验" Click="Button_Click"></Button>
             </Grid>
         </GroupBox>

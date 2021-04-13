@@ -25,22 +25,22 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Text="端口名" Style="{StaticResource TextBlock}"></TextBlock>
-        <dxe:ComboBoxEdit x:Name="cmbname" IsTextEditable="False" Grid.Column="1" Style="{StaticResource ComboBoxEdit}" AutoComplete="True"></dxe:ComboBoxEdit>
+        <ComboBox x:Name="cmbname"  Grid.Column="1" Style="{StaticResource ComboBox}" ></ComboBox>
         <TextBlock Text="波特率" Grid.Row="1" Style="{StaticResource TextBlock}"></TextBlock>
-        <dxe:ComboBoxEdit x:Name="cmbbaudrate" IsTextEditable="False" Grid.Column="1" Grid.Row="1" Style="{StaticResource ComboBoxEdit}">
+        <ComboBox x:Name="cmbbaudrate"  Grid.Column="1" Grid.Row="1" Style="{StaticResource ComboBox}">
             <dxe:ComboBoxEditItem Content="1200"/>
             <dxe:ComboBoxEditItem Content="2400"/>
             <dxe:ComboBoxEditItem Content="4800"/>
             <dxe:ComboBoxEditItem Content="9600"/>
             <dxe:ComboBoxEditItem Content="115200"/>
-        </dxe:ComboBoxEdit>
+        </ComboBox>
         <Grid Grid.Row="2" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <dx:SimpleButton Content="开启" Style="{StaticResource barSimpleButon}" Click="SimpleButton_Click"></dx:SimpleButton>
-            <dx:SimpleButton Grid.Column="1" Click="SimpleButton_Click_1" Content="关闭" Style="{StaticResource barSimpleButon}"></dx:SimpleButton>
+            <Button Content="开启" Style="{StaticResource Button}" Click="SimpleButton_Click"></Button>
+            <Button Grid.Column="1" Click="SimpleButton_Click_1" Content="关闭" Style="{StaticResource Button}"></Button>
         </Grid>
         <TextBlock FontWeight="Bold" Style="{StaticResource TextBlock}" x:Name="spstate" Grid.Row="3" Grid.ColumnSpan="2"></TextBlock>
     </Grid>

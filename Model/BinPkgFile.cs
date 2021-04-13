@@ -26,11 +26,11 @@ namespace GreenWhale.UpdateCore
             CodeInfo = codeInfo;
             BinData = bindata;
             var hd = codeInfo.HardwareVersion;
-            var dhh = ByteAction.HexStringToByte(hd.PadLeft(4, '0')).Reverse().ToArray();
+            var dhh = hd.PadLeft(4, '0').ToHex().Reverse().ToArray();
             var sd = codeInfo.SoftwareVersion;
-            var shh = ByteAction.HexStringToByte(sd.PadLeft(4, '0')).Reverse().ToArray();
+            var shh = sd.PadLeft(4, '0').ToHex().Reverse().ToArray();
             var add = codeInfo.Address;
-            var addd = ByteAction.HexStringToByte(add.PadLeft(8, '0')).Reverse().ToArray();
+            var addd = add.PadLeft(8, '0').ToHex().Reverse().ToArray();
             ServerRequestUpdate = new ServerRequestUpdate(MD5, new HardwareVersion(dhh), new SoftwareVersion(shh), addd);
         }
         /// <summary>
